@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../css/index.css" />
+    <title></title>
+</head>
+<body>
+<div class="classifier">
+    <div class="instructions">Using the definitions provided, determine if the following fact is correct.<br/>
+            If for any reason you wish to skip, select "Unknown".
+    </div>
+    </br></br>
+    <div class="def1"><i>#{fsubj.child}</i>: #{fsubj.c_def}	</div>
+        </br>
+    <div class="def2"><i>#{fsubj.parent}</i>: #{fsubj.p_def}	</div>
+        </br>
+    <div class="statement"> <h2><i>#{fsubj.child}</i> is a kind of <i>#{fsubj.parent}</i></h2>	</div>
+        </br>
+    <div class="response">
+        <input type="radio" name="quality" value="correct" id="correct" class="input-hidden" />
+        <label for="correct"><button class="response_selection">Correct</button></label>
+        &nbsp;
+        <input type="radio" name="quality" value="incorrect" id="incorrect" class="input-hidden"/>
+        <label for="incorrect"><button class="response_selection">Incorrect</button></label>
+        &nbsp;
+        <input type="radio" name="quality" value="unknown" id="unknown" class="input-hidden"/>
+        <label for="unknown"><button class="response_selection">Unknown</button></label >
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button name="next" class="next_button">Next</button>
+    </div>
+</div>
+</body>
+</html>

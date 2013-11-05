@@ -1,0 +1,19 @@
+{
+  "name": "zooniverse-example",
+  "version": "0.0.0",
+  "description": "To get up and running:",
+  "main": "index.js",
+  "dependencies": {
+    "spine": "~1.2.0",
+    "serveup": "0.0.5",
+    "stylus": "~0.37.0"
+  },
+  "devDependencies": {
+    "coffee-script": "~1.6.3"
+  },
+  "scripts": {
+    "start": "cake serve"
+  },
+  "author": "Jonathan Mortensen",
+  "license": "BSD-2-Clause"
+}

@@ -1,0 +1,472 @@
+.zooniverse-top-bar {
+  background: #000;
+  color: #fff;
+  font: bold 11px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  height: 40px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-shadow: 0 1px 1px #000;
+  top: 0;
+  z-index: 100;
+}
+.zooniverse-top-bar:before {
+  border-color: #000 #000 transparent transparent;
+  border-style: solid;
+  border-width: 20px 10px;
+  content: "";
+  height: 0;
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 0;
+}
+.zooniverse-top-bar a {
+  border: 0;
+  color: inherit;
+  text-decoration: none;
+}
+.zooniverse-top-bar button {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  text-shadow: inherit;
+  text-transform: inherit;
+}
+.zooniverse-top-bar .no-user {
+  display: block;
+  margin: 4px 6px 0;
+}
+.zooniverse-top-bar .no-user .zooniverse,
+.zooniverse-top-bar .no-user .sign-in {
+  display: inline-block;
+  margin: 0 6px;
+  vertical-align: middle;
+}
+.zooniverse-top-bar .no-user .zooniverse {
+  font-size: 13px;
+}
+.zooniverse-top-bar .no-user .zooniverse .zooniverse-logo {
+  background: url("./images/zooniverse-logo-white.png");
+  display: inline-block;
+  height: 25px;
+  margin-right: 5px;
+  position: relative;
+  top: -2px;
+  vertical-align: middle;
+  width: 25px;
+}
+.zooniverse-top-bar .no-user .sign-in {
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.zooniverse-top-bar .no-user .sign-in button {
+  padding: 10px 0;
+}
+.zooniverse-top-bar .current-user {
+  display: none;
+  margin-top: 5px;
+}
+.zooniverse-top-bar .current-user .messages,
+.zooniverse-top-bar .current-user .info,
+.zooniverse-top-bar .current-user .avatar,
+.zooniverse-top-bar .current-user .group {
+  display: inline-block;
+  margin: 0 6px;
+  vertical-align: middle;
+}
+.zooniverse-top-bar .current-user .messages {
+  margin-top: -3px;
+  opacity: 0.33;
+}
+.zooniverse-top-bar .current-user .messages .message-count {
+  background: url("./images/message-envelope.png") right center no-repeat;
+  display: inline-block;
+  padding-right: 24px;
+}
+.zooniverse-top-bar .current-user .info {
+  line-height: 1;
+  margin-top: -3px;
+}
+.zooniverse-top-bar .current-user .info .current-user-name {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1;
+}
+.zooniverse-top-bar .current-user .info button {
+  font-size: 8px;
+  text-transform: uppercase;
+}
+.zooniverse-top-bar .current-user .avatar img {
+  height: 30px;
+  width: 30px;
+}
+.zooniverse-top-bar .current-user .group {
+  background: url("./images/zooniverse-group-icon.png") right center no-repeat;
+  display: inline-block;
+  height: 20px;
+  opacity: 0.33;
+  width: 24px;
+}
+.zooniverse-top-bar.signed-in .no-user {
+  display: none;
+}
+.zooniverse-top-bar.signed-in .current-user {
+  display: block;
+}
+.zooniverse-top-bar.has-messages .current-user .messages,
+.zooniverse-top-bar.has-group .current-user .group {
+  opacity: 1;
+}
+.zooniverse-top-bar .zooniverse-login-form button[name="sign-out"] {
+  display: none;
+}
+.zooniverse-dialog {
+  display: block;
+  font-size: 12px;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.zooniverse-dialog .underlay {
+  background: rgba(0,0,0,0);
+  display: table;
+  width: 100%;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  -moz-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
+  height: 100%;
+}
+.zooniverse-dialog .underlay .container {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  perspective: 1000px;
+}
+.zooniverse-dialog .underlay .container .dialog {
+  background: #f4f4f4;
+  border-top: 5px solid #050505;
+  -moz-box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+  box-shadow: 0 3px 5px rgba(0,0,0,0.5);
+  color: #000;
+  display: inline-block;
+  max-width: 33%;
+  opacity: 0;
+  padding: 30px;
+  position: relative;
+  text-align: left;
+  text-shadow: none;
+  -webkit-transform: translateY(-25%);
+  -moz-transform: translateY(-25%);
+  -ms-transform: translateY(-25%);
+  -o-transform: translateY(-25%);
+  transform: translateY(-25%);
+  -webkit-transition: opacity 0.25s ease-in-out transform 0.33s ease-in-out linear;
+  -moz-transition: opacity 0.25s ease-in-out transform 0.33s ease-in-out linear;
+  transition: opacity 0.25s ease-in-out transform 0.33s ease-in-out linear;
+}
+.zooniverse-dialog .underlay .container .dialog > form > button[name="close-dialog"] {
+  font-size: 16px;
+  height: 1em;
+  position: absolute;
+  right: 4px;
+  top: 0;
+  width: 1em;
+}
+.zooniverse-dialog.warning .underlay .container .dialog {
+  border: 5px solid #f90;
+}
+.zooniverse-dialog.error .underlay .container .dialog {
+  border: 5px solid #c30;
+}
+.zooniverse-dialog.showing .underlay {
+  background: rgba(0,0,0,0.5);
+}
+.zooniverse-dialog.showing .underlay .container .dialog {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0);
+}
+.zooniverse-dialog button {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+.zooniverse-dialog a {
+  border: 0;
+  color: inherit;
+  text-decoration: underline;
+}
+.zooniverse-dialog a:hover {
+  color: inherit;
+}
+.zooniverse-dialog header {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.zooniverse-dialog header .zooniverse-logo {
+  background: url("./images/zooniverse-logo-black.png");
+  display: inline-block;
+  height: 25px;
+  margin-right: 5px;
+  position: relative;
+  top: -2px;
+  vertical-align: middle;
+  width: 25px;
+}
+.zooniverse-dialog .loader {
+  animation: 1s zooniverse-progress linear infinite;
+  background: linear-gradient(left top, transparent 25%, #000 25%, #000 50%, transparent 50%, transparent 75%, #000 75%);
+  background-size: 25px 25px;
+  bottom: 0;
+  display: none;
+  left: 0;
+  opacity: 0.05;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+.zooniverse-dialog .loading .loader {
+  display: block;
+}
+.zooniverse-dialog label {
+  display: block;
+  margin: 10px 0;
+}
+.zooniverse-dialog input {
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  -moz-box-shadow: 0 1px 0 #fff;
+  -webkit-box-shadow: 0 1px 0 #fff;
+  box-shadow: 0 1px 0 #fff;
+  font-size: 12px;
+  padding: 10px;
+}
+.zooniverse-dialog input:first-child {
+  width: 100%;
+}
+.zooniverse-dialog .explanation {
+  font-size: 10px;
+  margin: 5px 13px;
+  opacity: 0.75;
+}
+.zooniverse-dialog .error-message {
+  color: #800000;
+  font-weight: bold;
+  text-align: center;
+}
+.zooniverse-dialog .action {
+  margin: 1em 0;
+  text-align: center;
+}
+.zooniverse-dialog .action button {
+  background: #fff;
+  border: 1px solid #bbb;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 1px 0 #fff inset, 0 1px 3px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 0 1px 0 #fff inset, 0 1px 3px rgba(0,0,0,0.25);
+  box-shadow: 0 1px 0 #fff inset, 0 1px 3px rgba(0,0,0,0.25);
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0 5px;
+  padding: 3px 10px;
+}
+.zooniverse-dialog .action button:active {
+  border-color: rgba(0,0,0,0.25);
+  -moz-box-shadow: 0 100px rgba(0,0,0,0.125) inset;
+  -webkit-box-shadow: 0 100px rgba(0,0,0,0.125) inset;
+  box-shadow: 0 100px rgba(0,0,0,0.125) inset;
+}
+@-moz-keyframes zooniverse-progress {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 50px 0;
+  }
+}
+@-webkit-keyframes zooniverse-progress {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 50px 0;
+  }
+}
+@-o-keyframes zooniverse-progress {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 50px 0;
+  }
+}
+@-ms-keyframes zooniverse-progress {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 50px 0;
+  }
+}
+@keyframes zooniverse-progress {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 50px 0;
+  }
+}
+h2 {
+  padding-top: 5px;
+}
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  width: 480px;
+  margin: auto;
+}
+.def1 {
+  font-size: 18px;
+  text-align: left;
+}
+.def2 {
+  font-size: 18px;
+  text-align: left;
+}
+.instructions {
+  text-align: left;
+  font-size: 16px;
+}
+.statement,
+margin auto,
+.classifier {
+  text-align: center;
+}
+.response {
+  margin: auto;
+}
+.input-hidden {
+  position: absolute;
+  left: -9999px;
+}
+input[type=radio]:checked + label>button {
+  border: 1px solid #9dce2c;
+  -moz-box-shadow: 0 0 3px 3px #8cb82b;
+  -webkit-box-shadow: 0 0 3px 3px #8cb82b;
+  box-shadow: 0 0 3px 3px #8cb82b;
+}
+.next_button {
+  -moz-box-shadow: inset 0px 1px 0px 0px #c1ed9c;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #c1ed9c;
+  -moz-box-shadow: inset 0px 1px 0px 0px #c1ed9c;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #c1ed9c;
+  box-shadow: inset 0px 1px 0px 0px #c1ed9c;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #9dce2c), color-stop(1, #8cb82b));
+  background: -moz-linear-gradient(center top, #9dce2c 5%, #8cb82b 100%);
+  background-color: #9dce2c;
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  border-bottom-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  border-bottom-left-radius: 6px;
+  text-indent: 0;
+  border: 1px solid #83c41a;
+  display: inline-block;
+  color: #fff;
+  font-family: Verdana;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  height: 50px;
+  line-height: 25px;
+  width: 60px;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 1px 1px 0px #689324;
+}
+.next_button:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #8cb82b), color-stop(1, #9dce2c));
+  background: -moz-linear-gradient(center top, #8cb82b 5%, #9dce2c 100%);
+  background-color: #8cb82b;
+}
+.next_button:active {
+  position: relative;
+  top: 1px;
+}
+.response_selection {
+  -moz-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+  -moz-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+  -webkit-box-shadow: inset 0px 1px 0px 0px #97c4fe;
+  box-shadow: inset 0px 1px 0px 0px #97c4fe;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #3d94f6), color-stop(1, #1e62d0));
+  background: -moz-linear-gradient(center top, #3d94f6 5%, #1e62d0 100%);
+  background-color: #3d94f6;
+  -webkit-border-top-left-radius: 6px;
+  -moz-border-radius-topleft: 6px;
+  border-top-left-radius: 6px;
+  -webkit-border-top-right-radius: 6px;
+  -moz-border-radius-topright: 6px;
+  border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+  -moz-border-radius-bottomright: 6px;
+  border-bottom-right-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+  -moz-border-radius-bottomleft: 6px;
+  border-bottom-left-radius: 6px;
+  text-indent: 0;
+  border: 1px solid #337fed;
+  display: inline-block;
+  color: #fff;
+  font-family: Verdana;
+  font-size: 15px;
+  font-weight: bold;
+  font-style: normal;
+  height: 50px;
+  line-height: 25px;
+  width: 100px;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 1px 1px 0px #1570cd;
+}
+.response_selection:hover {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #1e62d0), color-stop(1, #3d94f6));
+  background: -moz-linear-gradient(center top, #1e62d0 5%, #3d94f6 100%);
+  background-color: #1e62d0;
+}
+.response_selection:active {
+  position: relative;
+  top: 1px;
+}
